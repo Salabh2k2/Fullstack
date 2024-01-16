@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquerymin.js"></script>
+<script>
+$(document).ready(function(){
+ $("#country").change(function(){
+    var country = $(this).val();
+    $("#state").load("get_state.json?country="+country);
+ });
+
+ $("#state").change(function(){
+    var state = $(this).val();
+    $("#city").load("get_city.json?state="+state);
+ });
+});
+</script>
+</head>
+<body>
+
+<label for="country">Country:</label>
+<select id="country">
+ <option value="">Select</option>
+ <option value="USA">USA</option>
+ <option value="UK">UK</option>
+ <option value="Canada">Canada</option>
+</select>
+
+<label for="state">State:</label>
+<select id="state">
+ <option value="">Select</option>
+</select>
+
+<label for="city">City:</label>
+<select id="city">
+ <option value="">Select</option>
+</select>
+
+</body>
+</html>

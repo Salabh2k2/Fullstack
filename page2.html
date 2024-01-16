@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Fields</title>
+</head>
+<body>
+    <h1>Mailing  Address</h1>
+    <textarea id="temporaryAddress" rows="1" cols="50"></textarea><br>
+    
+    <input type="checkbox" id="sameAddress" onchange="sameAddressChecked()">
+    <label for="sameAddress">Same address as temporary address</label>
+
+    <h1>Permanent Address</h1>
+    <textarea id="permanentAddress" rows="1" cols="50"></textarea><br>
+
+
+    <script>
+        function sameAddressChecked() {
+            var isChecked = document.getElementById("sameAddress").checked;
+            if (isChecked) {
+                var temporaryAddress = document.getElementById("temporaryAddress").value;
+                document.getElementById("permanentAddress").value = temporaryAddress;
+            }
+        }
+    </script>
+</body>
+</html>
